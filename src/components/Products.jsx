@@ -127,7 +127,7 @@ function DroneGoPreview() {
 
 export default function Products() {
   return (
-    <section id="products" className="py-28 border-b" style={{borderColor:'rgba(255,255,255,0.06)'}}>
+    <section id="products" className="pt-[84px] pb-28 border-b" style={{borderColor:'rgba(255,255,255,0.06)'}}>
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
