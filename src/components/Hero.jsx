@@ -3,7 +3,7 @@ import DashboardPreview from './DashboardPreview'
 
 export default function Hero() {
   return (
-    <section className="relative flex items-start pt-[76px] overflow-hidden">
+    <section className="relative flex items-start pt-[76px] overflow-x-hidden">
       {/* Background grid */}
       <div className="absolute inset-0 pointer-events-none"
            style={{
@@ -37,7 +37,7 @@ export default function Hero() {
             </div>
 
             {/* Headline */}
-            <h1 className="text-5xl lg:text-[3.5rem] xl:text-[4rem] font-bold leading-[1.06] tracking-tight">
+            <h1 className="text-[2.4rem] sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-bold leading-[1.06] tracking-tight">
               We build software you{' '}
               <span className="relative inline-block">
                 <span className="text-white">don't have to</span>
@@ -96,8 +96,8 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right — dashboard preview */}
-          <div className="flex justify-center lg:justify-end">
+          {/* Right — dashboard preview (hidden on mobile) */}
+          <div className="hidden lg:flex justify-center lg:justify-end">
             <DashboardPreview />
           </div>
         </div>
