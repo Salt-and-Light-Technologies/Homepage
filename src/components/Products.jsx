@@ -79,44 +79,56 @@ function MicLockerPreview() {
   )
 }
 
-function DroneGoPreview() {
+function ADAPreview() {
+  const screens = [
+    { label: 'Member Profile', active: true },
+    { label: 'League Schedule', active: false },
+    { label: 'Player Stats', active: false },
+    { label: 'Admin Panel', active: false },
+  ]
+  const platforms = [
+    { name: 'iOS', icon: 'Swift', color: 'rgba(250,140,0,0.8)' },
+    { name: 'Android', icon: 'Kotlin', color: 'rgba(123,97,255,0.8)' },
+  ]
   return (
     <div className="w-full rounded-xl overflow-hidden border"
          style={{borderColor:'rgba(255,255,255,0.07)', background:'#0d0d0d'}}>
       <div className="flex items-center justify-between px-3 py-2.5 border-b"
            style={{borderColor:'rgba(255,255,255,0.06)'}}>
         <div className="flex items-center gap-2">
-          <div className="w-5 h-5 rounded bg-blue-400/15 flex items-center justify-center">
-            <span className="text-[8px] text-blue-400 font-bold">DG</span>
+          <div className="w-5 h-5 rounded flex items-center justify-center"
+               style={{background:'rgba(250,205,18,0.12)', border:'1px solid rgba(250,205,18,0.2)'}}>
+            <span className="text-[8px] text-[#facd12] font-bold">ADA</span>
           </div>
-          <span className="text-[11px] font-semibold text-white">DroneN'Go</span>
+          <span className="text-[11px] font-semibold text-white">American Darters Association</span>
         </div>
-        <span className="text-[8px] px-2 py-0.5 rounded-full text-blue-400 bg-blue-400/10 border border-blue-400/20">In Dev</span>
+        <span className="text-[8px] px-2 py-0.5 rounded-full text-[#facd12]"
+              style={{background:'rgba(250,205,18,0.08)', border:'1px solid rgba(250,205,18,0.2)'}}>
+          In Progress
+        </span>
       </div>
       <div className="p-3">
-        <div className="text-[9px] text-zinc-600 mb-2">Locker bay status</div>
-        <div className="grid grid-cols-4 gap-1 mb-3">
-          {Array.from({length:8}).map((_,i) => (
-            <div key={i} className="aspect-square rounded flex items-center justify-center text-[8px] font-mono"
-                 style={{
-                   background: i===1||i===4 ? 'rgba(250,205,18,0.1)' : 'rgba(255,255,255,0.03)',
-                   border: `1px solid ${i===1||i===4 ? 'rgba(250,205,18,0.25)' : 'rgba(255,255,255,0.06)'}`,
-                   color: i===1||i===4 ? '#facd12' : '#52525b',
-                 }}>
-              {String(i+1).padStart(2,'0')}
+        <div className="text-[9px] text-zinc-600 mb-2 uppercase tracking-widest">Mobile platforms</div>
+        <div className="flex gap-2 mb-3">
+          {platforms.map(p => (
+            <div key={p.name} className="flex-1 rounded-lg px-2 py-2 flex flex-col gap-1"
+                 style={{background:'rgba(255,255,255,0.03)', border:'1px solid rgba(255,255,255,0.06)'}}>
+              <span className="text-[8px] font-mono" style={{color:p.color}}>{p.icon}</span>
+              <span className="text-[9px] text-zinc-300 font-medium">{p.name}</span>
             </div>
           ))}
         </div>
+        <div className="text-[9px] text-zinc-600 mb-1.5 uppercase tracking-widest">App screens</div>
         <div className="flex flex-col gap-1">
-          {[
-            { bay:'02', model:'DJI Mini 4', status:'In Use' },
-            { bay:'05', model:'Air 3S', status:'Charging' },
-          ].map(row => (
-            <div key={row.bay} className="flex items-center gap-2 px-2 py-1.5 rounded text-[9px]"
-                 style={{background:'#161616', border:'1px solid rgba(255,255,255,0.05)'}}>
-              <span className="font-mono text-zinc-600 w-4">{row.bay}</span>
-              <span className="text-zinc-300 flex-1">{row.model}</span>
-              <span className="text-[#facd12]">{row.status}</span>
+          {screens.map(s => (
+            <div key={s.label} className="flex items-center gap-2 px-2 py-1.5 rounded text-[9px]"
+                 style={{
+                   background: s.active ? 'rgba(250,205,18,0.06)' : '#161616',
+                   border: `1px solid ${s.active ? 'rgba(250,205,18,0.2)' : 'rgba(255,255,255,0.05)'}`,
+                 }}>
+              <span className="w-1 h-1 rounded-full shrink-0"
+                    style={{background: s.active ? '#facd12' : 'rgba(255,255,255,0.15)'}} />
+              <span style={{color: s.active ? '#facd12' : '#71717a'}}>{s.label}</span>
             </div>
           ))}
         </div>
@@ -213,36 +225,54 @@ export default function Products() {
           </div>
         </div>
 
-        {/* DroneN'Go — secondary */}
+        {/* ADA — secondary */}
         <div className="rounded-2xl overflow-hidden"
              style={{border:'1px solid rgba(255,255,255,0.07)', background:'#111111'}}>
           <div className="grid md:grid-cols-3 gap-0">
             {/* Preview */}
             <div className="p-5 border-b md:border-b-0 md:border-r"
                  style={{borderColor:'rgba(255,255,255,0.06)', background:'#0d0d0d'}}>
-              <DroneGoPreview />
+              <ADAPreview />
             </div>
             {/* Info */}
             <div className="md:col-span-2 p-7 flex flex-col justify-center gap-4">
               <div className="flex items-center gap-2">
-                <span className="text-[10px] px-2.5 py-1 rounded-full font-semibold text-blue-400"
-                      style={{background:'rgba(96,165,250,0.08)', border:'1px solid rgba(96,165,250,0.2)'}}>
-                  In Development
+                <span className="text-[10px] px-2.5 py-1 rounded-full font-semibold"
+                      style={{background:'rgba(250,205,18,0.08)', color:'#facd12', border:'1px solid rgba(250,205,18,0.2)'}}>
+                  Digital Modernization
                 </span>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white mb-2">DroneN'Go</h3>
+                <h3 className="text-xl font-bold text-white mb-2">American Darters Association</h3>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  A rentable drone locker system combining hardware and software: mobile apps
-                  for booking and access, QR/PIN-based locker entry, payment and rental logic,
-                  backend coordination, and third-party locker API integrations.
+                  A digital modernization initiative for a national darts organization, beginning with
+                  native iOS and Android applications and expanding into backend, database, and web
+                  platform modernization.
                 </p>
-                <p className="text-xs text-zinc-600 mt-3 leading-relaxed">
-                  Why it matters: We design systems that operate in the real world — not just inside a browser.
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 mt-4">
+                  {[
+                    'Native iOS application built with SwiftUI',
+                    'Native Android application built with Kotlin',
+                    'Membership and player experience modernization',
+                    'Legacy data and database restructuring',
+                    'Future web platform modernization',
+                    'Foundation for stats, records, and league operations',
+                  ].map(f => (
+                    <div key={f} className="flex items-start gap-2 text-xs text-zinc-400">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="mt-[2px] shrink-0">
+                        <path d="M2 6.5L4.5 9L10 3" stroke="#facd12" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                      {f}
+                    </div>
+                  ))}
+                </div>
+                <p className="text-xs text-zinc-600 mt-4 leading-relaxed">
+                  Modernization is not just a redesign. It requires rebuilding real workflows across mobile apps,
+                  data systems, and future web infrastructure without losing the operational history the organization depends on.
                 </p>
               </div>
               <div className="flex flex-wrap gap-1.5">
-                {['React Native', 'Node.js', 'MQTT', 'Locker APIs', 'Stripe'].map(t => (
+                {['SwiftUI', 'Kotlin', 'Node.js', 'PostgreSQL', 'REST APIs'].map(t => (
                   <span key={t} className="text-[10px] px-2 py-0.5 rounded font-mono text-zinc-500"
                         style={{background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.07)'}}>
                     {t}

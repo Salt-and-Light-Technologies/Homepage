@@ -51,7 +51,7 @@ export default function Footer() {
             <div className="text-[10px] font-semibold text-zinc-600 uppercase tracking-widest mb-1">Products</div>
             {[
               { label: 'MicLocker', sub: 'Audio gear marketplace' },
-              { label: "DroneN'Go", sub: 'Smart locker rental platform' },
+              { label: 'ADA', sub: 'National darts association modernization' },
             ].map(item => (
               <div key={item.label} className="flex flex-col gap-0.5">
                 <span className="text-sm text-zinc-400">{item.label}</span>
