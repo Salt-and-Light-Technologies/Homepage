@@ -29,7 +29,7 @@ export default function BlogPostPage() {
            }} />
 
       <main className="relative">
-        <div className="max-w-2xl mx-auto px-6 pt-32 pb-28">
+        <div className="max-w-2xl mx-auto px-6 pt-16 pb-28">
 
           {/* Back */}
           <Link to="/blog" className="inline-flex items-center gap-2 text-xs text-zinc-600 hover:text-zinc-400 transition-colors duration-150 mb-10">

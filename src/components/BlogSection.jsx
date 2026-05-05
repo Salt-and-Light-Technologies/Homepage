@@ -61,7 +61,7 @@ export default function BlogSection() {
   if (!loading && posts.length === 0) return null
 
   return (
-    <section className="py-28 border-b" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
+    <section className="py-14 border-b" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}

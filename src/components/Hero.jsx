@@ -21,7 +21,7 @@ export default function Hero() {
            style={{background: 'radial-gradient(circle, rgba(250,205,18,0.05) 0%, transparent 65%)'}}
       />
 
-      <div className="relative max-w-7xl mx-auto px-6 py-28 w-full">
+      <div className="relative max-w-7xl mx-auto px-6 py-14 w-full">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
 
           {/* Left — copy */}

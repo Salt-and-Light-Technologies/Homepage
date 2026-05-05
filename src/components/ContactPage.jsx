@@ -18,7 +18,7 @@ export default function ContactPage() {
       />
 
       <main className="relative">
-        <div className="max-w-2xl mx-auto px-6 pt-32 pb-28">
+        <div className="max-w-2xl mx-auto px-6 pt-16 pb-28">
 
           {/* Header */}
           <div className="mb-12">

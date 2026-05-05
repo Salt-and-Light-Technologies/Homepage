@@ -13,7 +13,7 @@ export default function LegalPage({ title, effectiveDate, sections }) {
       />
 
       <main className="relative">
-        <div className="max-w-3xl mx-auto px-6 pt-32 pb-28">
+        <div className="max-w-3xl mx-auto px-6 pt-16 pb-28">
 
           {/* Back link */}
           <Link to="/"
