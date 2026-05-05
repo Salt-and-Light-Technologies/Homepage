@@ -3,7 +3,7 @@ import DashboardPreview from './DashboardPreview'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-[76px] overflow-hidden">
+    <section className="relative min-h-screen flex items-start pt-[76px] overflow-hidden">
       {/* Background grid */}
       <div className="absolute inset-0 pointer-events-none"
            style={{
