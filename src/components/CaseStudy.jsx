@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function CaseStudy() {
   return (
-    <section id="case-study" className="py-28 border-b" style={{borderColor:'rgba(255,255,255,0.06)'}}>
+    <section id="case-study" className="pt-28 pb-14 border-b" style={{borderColor:'rgba(255,255,255,0.06)'}}>
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Section label */}
@@ -72,15 +72,6 @@ export default function CaseStudy() {
               </div>
             </div>
 
-            {/* Insight quote */}
-            <blockquote className="flex gap-4 pl-5 border-l-2" style={{borderColor:'#facd12'}}>
-              <div>
-                <p className="text-sm text-zinc-300 leading-relaxed italic">
-                  "This is the level of system design we bring into every engagement."
-                </p>
-                <span className="block mt-3 text-xs text-zinc-600">— Salt & Light Engineering Team</span>
-              </div>
-            </blockquote>
           </div>
 
           {/* Right — 2 cols */}

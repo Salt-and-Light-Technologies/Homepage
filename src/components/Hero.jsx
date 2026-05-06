@@ -51,7 +51,7 @@ export default function Hero() {
             {/* Subtext */}
             <p className="text-[1.0625rem] text-zinc-400 leading-[1.75] max-w-[480px]">
               Salt and Light Technologies designs and builds product-grade software —
-              marketplaces, mobile apps, backend platforms, and dashboards — for founders
+              websites, mobile apps, databases and even AI tools — for founders
               and teams who need it done right the first time.
             </p>
 

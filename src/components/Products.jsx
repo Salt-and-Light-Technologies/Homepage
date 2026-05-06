@@ -154,7 +154,7 @@ export default function Products() {
           </h2>
           <p className="text-zinc-400 mt-4 text-base leading-relaxed">
             Most firms ship tickets. We build systems we have to live with — so we design for scale,
-            edge cases, and real users from day one.
+            edge cases, and real users from day one. We wouldn't build your digital solutions any other way. Our guarantee.
           </p>
         </div>
 

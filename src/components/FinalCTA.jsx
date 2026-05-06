@@ -37,7 +37,7 @@ export default function FinalCTA() {
             </h2>
 
             <p className="text-zinc-400 text-lg leading-relaxed">
-              If it's worth building, we'll help you build it right. If it's not, we'll tell you that too.
+              From idea to execution, we help you make the right decisions at every step.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
