@@ -1,39 +1,20 @@
 /**
  * Contact form submission handler.
  *
- * Currently wired to Formspree (no backend required).
- * To switch to Option B (backend API), replace the body of
- * `submitContact` with:
+ * POSTs to the Vercel serverless function at /api/contact,
+ * which sends the email via Resend.
  *
- *   const res = await fetch('/api/contact', {
- *     method: 'POST',
- *     headers: { 'Content-Type': 'application/json' },
- *     body: JSON.stringify(data),
- *   })
- *   if (!res.ok) throw new Error('Submission failed')
+ * The only thing you need to configure is the RESEND_API_KEY
+ * environment variable — no frontend env vars required.
  *
- * Setup:
- *   1. Create a form at https://formspree.io
- *   2. Copy your endpoint (e.g. https://formspree.io/f/xabcdefg)
- *   3. Add to .env.local:  VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/xabcdefg
+ * Local dev:  add RESEND_API_KEY=re_xxx to .env.local
+ * Production: add RESEND_API_KEY in Vercel → Project Settings → Environment Variables
  */
 
-const ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT
-
 export async function submitContact(data) {
-  if (!ENDPOINT) {
-    throw new Error(
-      'VITE_FORMSPREE_ENDPOINT is not set. Add it to .env.local — see src/lib/submitContact.js for instructions.'
-    )
-  }
-
-  const res = await fetch(ENDPOINT, {
+  const res = await fetch('/api/contact', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      // Tells Formspree to return JSON instead of redirecting
-      Accept: 'application/json',
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       name: data.name,
       email: data.email,
@@ -46,9 +27,7 @@ export async function submitContact(data) {
   })
 
   if (!res.ok) {
-    // Formspree returns { errors: [...] } on 4xx
     const body = await res.json().catch(() => ({}))
-    const detail = body?.errors?.map(e => e.message).join(', ') ?? res.statusText
-    throw new Error(`Submission failed: ${detail}`)
+    throw new Error(body?.error ?? `Submission failed (${res.status})`)
   }
 }
