@@ -1,7 +1,7 @@
 import Reveal from './Reveal'
 
 export default function ProjectCard({ project }) {
-  const { name, kind, year, status, image, tagline, description, url, stack, moreScreens } = project
+  const { name, kind, year, status, image, heroIcon, tagline, description, url, stack, moreScreens } = project
 
   return (
     <Reveal
@@ -39,7 +39,59 @@ export default function ProjectCard({ project }) {
 
       <div style={{ padding: '0 36px' }}>
         <div style={{ borderRadius: 16, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.12)', aspectRatio: '16/9' }}>
-          <img src={image} alt={`${name} screenshot`} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+          {heroIcon ? (
+            <div
+              style={{
+                position: 'relative',
+                width: '100%',
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 22,
+                background: '#0a0a0a',
+                overflow: 'hidden',
+              }}
+            >
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%,-50%)',
+                  width: 420,
+                  height: 420,
+                  borderRadius: '50%',
+                  background: 'radial-gradient(circle, rgba(250,205,18,0.14) 0%, transparent 65%)',
+                  filter: 'blur(20px)',
+                  pointerEvents: 'none',
+                }}
+              />
+              <img
+                src={heroIcon}
+                alt={`${name} app icon`}
+                style={{
+                  position: 'relative',
+                  width: 108,
+                  height: 108,
+                  borderRadius: '22%',
+                  boxShadow: '0 12px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.08)',
+                }}
+              />
+              <a
+                href={url}
+                target="_blank"
+                rel="noreferrer"
+                style={{ position: 'relative', display: 'inline-flex' }}
+                className="hover:brightness-110 transition-[filter] duration-150"
+              >
+                <img src="/work/app-store-badge-white.svg" alt="Download on the App Store" style={{ height: 42, width: 'auto', display: 'block' }} />
+              </a>
+            </div>
+          ) : (
+            <img src={image} alt={`${name} screenshot`} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+          )}
         </div>
       </div>
 
