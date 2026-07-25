@@ -15,9 +15,9 @@ export default function ProjectCard({ project }) {
         boxShadow: '0 24px 70px rgba(0,0,0,0.45)',
       }}
     >
-      <div style={{ padding: '32px 36px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 24, flexWrap: 'wrap' }}>
+      <div style={{ padding: 'clamp(20px, 5vw, 32px) clamp(18px, 5vw, 36px) clamp(16px, 4vw, 24px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 24, flexWrap: 'wrap' }}>
         <div style={{ display: 'flex', alignItems: 'baseline', gap: 14, flexWrap: 'wrap' }}>
-          <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', margin: 0, color: '#fff' }}>
+          <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 'clamp(22px, 5vw, 30px)', fontWeight: 700, letterSpacing: '-0.02em', margin: 0, color: '#fff' }}>
             {name}
           </h2>
           <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)' }}>{kind} · {year}</span>
@@ -37,7 +37,7 @@ export default function ProjectCard({ project }) {
         </span>
       </div>
 
-      <div style={{ padding: '0 36px' }}>
+      <div style={{ padding: '0 clamp(18px, 5vw, 36px)' }}>
         <div style={{ borderRadius: 16, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.12)', aspectRatio: '16/9' }}>
           {heroIcon ? (
             <div
@@ -49,9 +49,10 @@ export default function ProjectCard({ project }) {
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: 22,
+                gap: 'clamp(12px, 3vw, 22px)',
                 background: '#0a0a0a',
                 overflow: 'hidden',
+                padding: '0 16px',
               }}
             >
               <div
@@ -73,8 +74,8 @@ export default function ProjectCard({ project }) {
                 alt={`${name} app icon`}
                 style={{
                   position: 'relative',
-                  width: 108,
-                  height: 108,
+                  width: 'clamp(72px, 16vw, 108px)',
+                  height: 'clamp(72px, 16vw, 108px)',
                   borderRadius: '22%',
                   boxShadow: '0 12px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.08)',
                 }}
@@ -86,7 +87,11 @@ export default function ProjectCard({ project }) {
                 style={{ position: 'relative', display: 'inline-flex' }}
                 className="hover:brightness-110 transition-[filter] duration-150"
               >
-                <img src="/work/app-store-badge-white.svg" alt="Download on the App Store" style={{ height: 42, width: 'auto', display: 'block' }} />
+                <img
+                  src="/work/app-store-badge-white.svg"
+                  alt="Download on the App Store"
+                  style={{ height: 'clamp(32px, 7vw, 42px)', width: 'auto', display: 'block' }}
+                />
               </a>
             </div>
           ) : (
@@ -95,10 +100,10 @@ export default function ProjectCard({ project }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr]" style={{ padding: '28px 36px 36px', gap: 32, alignItems: 'start' }}>
+      <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr]" style={{ padding: 'clamp(20px, 5vw, 28px) clamp(18px, 5vw, 36px) clamp(24px, 6vw, 36px)', gap: 32, alignItems: 'start' }}>
         <div>
           <p style={{ fontSize: 16, fontWeight: 600, color: '#fff', margin: 0 }}>{tagline}</p>
-          <p style={{ fontSize: 14.5, lineHeight: 1.7, color: 'rgba(255,255,255,0.6)', margin: '12px 0 0', maxWidth: '60ch' }}>
+          <p style={{ fontSize: 'clamp(13.5px, 3vw, 14.5px)', lineHeight: 1.7, color: 'rgba(255,255,255,0.6)', margin: '12px 0 0', maxWidth: '60ch' }}>
             {description}
           </p>
           <a
@@ -140,7 +145,7 @@ export default function ProjectCard({ project }) {
       </div>
 
       {moreScreens && moreScreens.length > 0 && (
-        <div style={{ padding: '0 36px 36px' }}>
+        <div style={{ padding: '0 clamp(18px, 5vw, 36px) clamp(24px, 6vw, 36px)' }}>
           <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 12 }}>
             More screens
           </div>

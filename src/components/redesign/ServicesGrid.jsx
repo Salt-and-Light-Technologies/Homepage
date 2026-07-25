@@ -13,7 +13,7 @@ export default function ServicesGrid() {
       id="services"
       style={{
         position: 'relative',
-        padding: '8px 48px 80px',
+        padding: '8px clamp(16px, 5vw, 48px) clamp(48px, 10vw, 80px)',
         maxWidth: 1120,
         margin: '0 auto',
         scrollMarginTop: 100,
@@ -23,7 +23,7 @@ export default function ServicesGrid() {
         as="h2"
         style={{
           fontFamily: "'Space Grotesk', sans-serif",
-          fontSize: 34,
+          fontSize: 'clamp(1.5rem, 5vw, 2.125rem)',
           fontWeight: 700,
           letterSpacing: '-0.02em',
           margin: '0 0 28px',
